@@ -4,7 +4,7 @@ import { colors } from "../../global/colors";
 import Container from "../Container";
 
 const StyledHeroSection = styled.section`
-    padding: 20px 0;
+    padding: 40px 0;
     background-color: ${colors.mainBackground};
 
     & h1 {

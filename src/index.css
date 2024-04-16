@@ -4,11 +4,19 @@
     box-sizing: border-box;
 }
 
+/* html {
+    scrollbar-gutter: stable;
+} */
+
 body {
     margin: 0;
     background-color: #2C2C2C;
     color: #E4E4E4;
     font-family: 'Ubuntu', Arial, sans-serif;
+}
+
+.scroll-lock {
+    /* overflow: hidden; */
 }
 
 #root {
@@ -25,3 +33,4 @@ body {
     src:
       url("./fonts/Ubuntu-Regular.ttf") format("woff2"),
   } */
+  
