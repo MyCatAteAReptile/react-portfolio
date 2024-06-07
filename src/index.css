@@ -4,19 +4,11 @@
     box-sizing: border-box;
 }
 
-/* html {
-    scrollbar-gutter: stable;
-} */
-
 body {
     margin: 0;
     background-color: #2C2C2C;
     color: #E4E4E4;
-    font-family: 'Ubuntu', Arial, sans-serif;
-}
-
-.scroll-lock {
-    /* overflow: hidden; */
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 #root {
@@ -25,12 +17,38 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-/* @font-face {
-    font-family: "Ubuntu";
+@font-face {
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
     src:
-      url("./fonts/Ubuntu-Regular.ttf") format("woff2"),
-  } */
+      url("./fonts/roboto-v30-cyrillic_latin-regular.woff2") format("woff2"),
+}
   
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src:
+      url("./fonts/roboto-v30-cyrillic_latin-italic.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:
+      url("./fonts/roboto-v30-cyrillic_latin-700.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src:
+      url("./fonts/roboto-v30-cyrillic_latin-900.woff2") format("woff2"),
+}

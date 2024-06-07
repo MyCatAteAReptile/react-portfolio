@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { viewports } from "../global/viewports";
 
 interface ContainerProps {
   children?: React.ReactNode,
@@ -11,6 +12,16 @@ const StyledContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 120px;
+
+  @media ${viewports.tablet} {
+    max-width: 768px;
+    padding: 0 40px;
+  }
+
+  @media ${viewports.mobile} {
+    max-width: 320px;
+    padding: 0 10px;
+  }
 `;
 
 const Container = ({ children, className = '' }: ContainerProps) => {

@@ -5,13 +5,14 @@ import { colors } from "../../../global/colors";
 import SkillsList from "./SkillsList";
 import Presentation from "./Presentation";
 import Certificates from "./Certificates";
+import { viewports } from "../../../global/viewports";
 
 const StyledAboutSection = styled.section`
   padding: 40px 0;
   background-color: ${colors.lightBackground};
 
-  & div:nth-child() {
-    margin-bottom: 40px;
+  @media ${viewports.mobile} {
+    padding: 20px 0;
   }
 `;
 

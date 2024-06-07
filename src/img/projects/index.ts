@@ -1,0 +1,10 @@
+export { default as calculatorPreview } from "./calculator-preview.jpg";
+export { default as fitnessPreview } from "./fitness-preview.jpg";
+export { default as travelsPreview } from "./travels-preview.jpg";
+export { default as cardsPreview } from "./cards-preview.jpg";
+export { default as portfolioPreview } from "./portfolio-preview.jpg";
+export { default as calculatorPreviewWebp } from "./calculator-preview.webp";
+export { default as fitnessPreviewWebp } from "./fitness-preview.webp";
+export { default as travelsPreviewWebp } from "./travels-preview.webp";
+export { default as cardsPreviewWebp } from "./cards-preview.webp";
+export { default as portfolioPreviewWebp } from "./portfolio-preview.webp";

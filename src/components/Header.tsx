@@ -4,9 +4,10 @@ import styled from 'styled-components'
 import { colors } from '../global/colors'
 import Container from './Container';
 import Logo from './Logo';
+import { viewports } from '../global/viewports';
 
 const StyledHeader = styled.header`
-  padding: 20px 0;
+  padding: 40px 0;
   background-color: ${colors.mainBackground};
 
   & div {
@@ -14,6 +15,10 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @media ${viewports.mobile} {
+    padding: 30px 0 20px 0;
   }
 `;
 
