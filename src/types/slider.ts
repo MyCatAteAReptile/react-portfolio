@@ -1,12 +1,12 @@
-import { MouseEventHandler } from "react"
+import { IImage } from "./image"
 
-export interface SlideI {
+export interface ISlide {
     title: string,
-    image: string
+    image: IImage
 }
 
-export interface SliderContextI {
-    slides: SlideI[],
+export interface ISliderContext {
+    slides: ISlide[],
     currentSlide: number,
     changeSlide: Function,
     setCurrentSlide: Function

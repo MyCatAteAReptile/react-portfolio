@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from '../components/sections/HeroSection'
+import HeroSection from '../components/sections/hero/HeroSection'
 import AboutSection from '../components/sections/about/AboutSection'
 import ProjectsSection from '../components/sections/projects/ProjectsSection'
 import ScrollToTopButton from '../components/UI/scroll/ScrollToTopButton'

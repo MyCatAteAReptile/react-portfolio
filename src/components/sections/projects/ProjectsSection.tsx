@@ -1,10 +1,10 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../../global/colors";
 import Container from "../../Container";
 import ProjectCard from "./ProjectCard";
 import { IProject } from "../../../types/project";
-import * as projectsCovers from "../../../img/projects";
+import { projectsImagesSet } from "../../../img/projects/projects";
 import { fonts } from "../../../global/fonts";
 import { ReactComponent as GithubIcon }  from "../../../img/svg/github-icon.svg";
 import { viewports } from "../../../global/viewports";
@@ -18,11 +18,11 @@ const tags = {
 }
 
 const projectsData: IProject[] = [
-  { id: 1, title: "Портфолио", tag: [tags.all, tags["react"]], image: projectsCovers.portfolioPreview, link: "https://cards-pi-steel.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/practice-react-cards/tree/master" },
-  { id: 2, title: "Карточки", tag: [tags.all, tags["react"]], image: projectsCovers.cardsPreview, link: "https://cards-pi-steel.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/practice-react-cards/tree/master" },
-  { id: 3, title: "Калькулятор", tag: [tags.all, tags["react"]], image: projectsCovers.calculatorPreview, link: "https://practice-react-calculator.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/practice-react-calculator/tree/master" },
-  { id: 4, title: "Фитнес", tag: [tags.all, tags["html-css"]], image: projectsCovers.fitnessPreview, link: "https://fitness-2-0-v747.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/fitness-2.0/tree/main" },
-  { id: 5, title: "Путешествия", tag: [tags.all, tags["html-css"]], image: projectsCovers.travelsPreview, link: "https://travels-rho.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/Travels/tree/main" },
+  { id: 1, title: "Портфолио", tag: [tags.all, tags["react"]], image: projectsImagesSet.portfolio, link: "https://cards-pi-steel.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/practice-react-cards/tree/master" },
+  { id: 2, title: "Карточки", tag: [tags.all, tags["react"]], image: projectsImagesSet.cards, link: "https://cards-pi-steel.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/practice-react-cards/tree/master" },
+  { id: 3, title: "Калькулятор", tag: [tags.all, tags["react"]], image: projectsImagesSet.calculator, link: "https://practice-react-calculator.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/practice-react-calculator/tree/master" },
+  { id: 4, title: "Фитнес", tag: [tags.all, tags["html-css"]], image: projectsImagesSet.fitness, link: "https://fitness-2-0-v747.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/fitness-2.0/tree/main" },
+  { id: 5, title: "Путешествия", tag: [tags.all, tags["html-css"]], image: projectsImagesSet.travels, link: "https://travels-rho.vercel.app", githubLink: "https://github.com/MyCatAteAReptile/Travels/tree/main" },
 ];
 
 const StyledCustomLink = styled(CustomLink)``;

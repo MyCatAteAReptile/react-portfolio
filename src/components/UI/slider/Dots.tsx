@@ -1,7 +1,9 @@
-import React, { useContext } from 'react'
-import { SliderContext } from './Slider'
+import React from 'react'
 import styled from 'styled-components';
 import { colors } from "../../../global/colors";
+import useSafeContext from '../../../hooks/useCustomContext';
+import { ISliderContext } from '../../../types/slider';
+import { SliderContext } from '../../../context/SliderContext';
 
 const StyledDots = styled.div`
   display: flex;
@@ -33,13 +35,18 @@ const Dot = styled.button<{ $active?: boolean }>`
 
 const Dots = () => {
 
-  const { currentSlide, setCurrentSlide } = useContext(SliderContext);
+  const { currentSlide, setCurrentSlide, slides } = useSafeContext<ISliderContext | null>(SliderContext);
 
   return (
     <StyledDots>
-      <Dot $active={ currentSlide === 0 } onClick={() => { setCurrentSlide(0) }}></Dot>
-      <Dot $active={ currentSlide === 1 } onClick={() => { setCurrentSlide(1) }}></Dot>
-      <Dot $active={ currentSlide === 2 } onClick={() => { setCurrentSlide(2) }}></Dot>
+      {slides.map((slide, index) => 
+        <Dot 
+          key={index} 
+          $active={ currentSlide === index } 
+          onClick={() => { setCurrentSlide(index) }} 
+          aria-label={`Перейти к слайду номер ${index}`}>
+        </Dot>
+      )}
     </StyledDots>
   )
 }

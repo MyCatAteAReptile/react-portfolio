@@ -143,7 +143,7 @@ const Navbar = () => {
         <li><a href="#about">Обо мне</a></li>
         <li><a href="#projects">Проекты</a></li>
       </NavLinks>
-      <NavButton onClick={toggleMenu}>
+      <NavButton onClick={toggleMenu} aria-label="Кнопка управления меню навигации.">
         <IconWrapper $isVisible={!isMenuOpen}><BarsIcon /></IconWrapper>
         <IconWrapper $isVisible={isMenuOpen}><XIcon /></IconWrapper>
       </NavButton>

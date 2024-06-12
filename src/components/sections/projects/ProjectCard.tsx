@@ -5,6 +5,8 @@ import { IProject } from "../../../types/project";
 import { ReactComponent as GithubIcon }  from "../../../img/svg/github-icon.svg";
 import { ReactComponent as LinkIcon }  from "../../../img/svg/link-icon.svg";
 import { viewports } from '../../../global/viewports';
+import { IImage } from '../../../types/image';
+import CustomPicture from '../../UI/picture/CustomPicture';
 
 const StyledProjectCard = styled.div`
     position: relative;
@@ -59,6 +61,7 @@ const StyledProjectCard = styled.div`
     }
 
     img {
+      display: block;
       width: 100%;
       height: 300px;
       object-fit: cover;
@@ -86,6 +89,11 @@ const StyledProjectCard = styled.div`
     @media ${viewports.mobile} {
       width: 300px;
 
+      img {
+        width: 300px;
+        height: 225px;
+      }
+
       .buttons {
         svg {
           width: 24px;
@@ -97,7 +105,7 @@ const StyledProjectCard = styled.div`
 
 interface ProjectCardProps {
   title: string,
-  image: string,
+  image: IImage,
   link?: string,
   githubLink?: string
 };
@@ -109,7 +117,7 @@ const ProjectCard = ({ title, image, link, githubLink }: ProjectCardProps) => {
         <a href={githubLink} aria-label="Ссылка на репозиторий проекта."><GithubIcon /></a>
         <a href={link} aria-label="Ссылка на проект."><LinkIcon /></a>
       </div>
-      <img src={image} alt={`Скриншот проекта '${title}'`} />
+      <CustomPicture image={image}/>
       <p>{title}</p>
     </StyledProjectCard>
   )

@@ -1,16 +1,16 @@
-import React, { createContext, useState } from 'react'
-import styled from "styled-components";
+import React, { useState } from 'react'
 import Arrows from './Arrows';
 import SlidesList from './SlidesList';
 import Dots from './Dots';
-import { SlideI, SliderContextI } from '../../../types/slider';
+import { ISlide } from '../../../types/slider';
 import { useSwipeable } from 'react-swipeable';
+import { SliderContext } from '../../../context/SliderContext';
+
+// export const SliderContext = createContext<SliderContextI>({ slides: [{ title: "TEST", image: "TEST" }], currentSlide: 0, changeSlide: () => { }, setCurrentSlide: () => { } });
 
 interface SliderProps {
-  slides: SlideI[]
+  slides: ISlide[]
 }
-
-export const SliderContext = createContext<SliderContextI>({ slides: [{ title: "TEST", image: "TEST" }], currentSlide: 0, changeSlide: () => { }, setCurrentSlide: () => { } });
 
 const Slider = ({ slides }: SliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -41,7 +41,7 @@ const Slider = ({ slides }: SliderProps) => {
 
   return (
     <div>
-      <SliderContext.Provider value={{ slides: slides, currentSlide: currentSlide, changeSlide, setCurrentSlide: setCurrentSlide }}>
+      <SliderContext.Provider value={{ slides, currentSlide, changeSlide, setCurrentSlide }}>
         <div style={{ position: "relative", touchAction: "pan-y" }} {...handlers}>
           <Arrows />
           <SlidesList />

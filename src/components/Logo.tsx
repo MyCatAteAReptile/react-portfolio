@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ReactComponent as LogoIcon } from '../img/svg/logoM5E.svg'
+import { ReactComponent as LogoIcon } from '../img/svg/logo.svg'
 import { colors } from "../global/colors";
 
 const StyledLogo = styled.a`
@@ -49,7 +49,7 @@ const ShadowLogoIcon = styled(StyledLogoIcon)`
 
 const Logo = () => {
   return (
-    <StyledLogo href='#hero'>
+    <StyledLogo href='#hero' aria-label="Логотип разработчика.">
       <StyledLogoIcon />
       <ShadowLogoIcon/>
     </StyledLogo>

@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../../../global/colors";
-import PCPhoto from "../../../img/pc.jpg";
+import { presentationImagesSet } from "../../../img/about/presentation/presentation";
 import { fonts } from "../../../global/fonts";
 import { ReactComponent as ListIcon } from "../../../img/svg/academic-cap.svg"
 import { viewports } from "../../../global/viewports";
+import CustomPicture from "../../UI/picture/CustomPicture";
 
 const StyledPresentation = styled.div`
   display: grid;
@@ -55,8 +56,6 @@ const StyledPresentation = styled.div`
   }
 
   img {
-    /* width: 350px;
-    height: 350px; */
     width: 280px;
     height: 280px;
     object-fit: cover;
@@ -71,20 +70,16 @@ const StyledPresentation = styled.div`
       text-align: center;
     }
 
-    img {
+    picture {
       display: none;
-      /* width: 608px;
-      height: 608px; */
     }
   }
 
   @media ${viewports.mobile} {
     padding: 10px;
 
-    img {
+    picture {
       display: block;
-      /* width: 280px;
-      height: 280px; */
     }
   }
 `;
@@ -92,7 +87,7 @@ const StyledPresentation = styled.div`
 const Presentation = () => {
   return (
     <StyledPresentation>
-      <img src={PCPhoto} alt="Компьютер на столе в стиле аниме." />
+      <CustomPicture image={presentationImagesSet.pc}/>
       <div>
         <h1>Обо мне</h1>
         <p>Я&nbsp;веб-разработчик и&nbsp;мне нравится создавать интересные и&nbsp;удобные приложения. Я&nbsp;использую HTML, CSS, JavaScript, TypeScript, React, Redux.</p>

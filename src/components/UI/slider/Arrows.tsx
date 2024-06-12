@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
-import { SliderContext } from './Slider';
+import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as ArrowLeftIcon } from '../../../img/svg/arrow-left.svg';
 import { colors } from "../../../global/colors";
 import { viewports } from '../../../global/viewports';
+import useSafeContext from '../../../hooks/useCustomContext';
+import { SliderContext } from '../../../context/SliderContext';
+import { ISliderContext } from '../../../types/slider';
 
 const StyledArrows = styled.div`
   position: absolute;
@@ -43,7 +45,7 @@ const StyledArrows = styled.div`
 
 const Arrows = () => {
 
-  const { changeSlide } = useContext(SliderContext);
+  const { changeSlide } = useSafeContext<ISliderContext | null>(SliderContext);
 
   return (
     <StyledArrows>

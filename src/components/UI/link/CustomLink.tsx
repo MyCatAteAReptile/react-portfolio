@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import { colors } from "../../../global/colors";
 import { fonts } from "../../../global/fonts";
-import { viewports } from "../../../global/viewports";
 
 const StyledCustomLink = styled.a`
     display: flex;

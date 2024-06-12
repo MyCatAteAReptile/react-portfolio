@@ -1,7 +1,10 @@
-import React, { useContext } from 'react';
-import { SliderContext } from "./Slider";
+import React from 'react';
+import { SliderContext } from '../../../context/SliderContext';
 import styled from 'styled-components';
 import { viewports } from '../../../global/viewports';
+import useSafeContext from '../../../hooks/useCustomContext';
+import { ISliderContext } from '../../../types/slider';
+import CustomPicture from '../picture/CustomPicture';
 
 const StyledSlidesList = styled.div`
     overflow: hidden;
@@ -73,7 +76,7 @@ const Slide = styled.div<{ $active?: boolean; }>`
 `;
 
 const SlidesList = () => {
-    const { slides, currentSlide } = useContext(SliderContext);
+    const { slides, currentSlide } = useSafeContext<ISliderContext | null>(SliderContext);
 
     return (
         <StyledSlidesList>
@@ -81,7 +84,7 @@ const SlidesList = () => {
                 slides.map((slide, index) => (
                     <Slide key={index} style={{ transform: `translateX(-${currentSlide * 100}%)` }} >
                         <div>
-                            <img src={slide.image} alt={slide.title} />
+                            <CustomPicture image={slide.image}/>
                             <p>{slide.title}</p>
                         </div>
                     </Slide>

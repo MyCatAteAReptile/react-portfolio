@@ -1,17 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../../../global/colors";
-import * as icons from "../../../img/skills-icons";
+import { ReactComponent as htmlIcon } from "../../../img/svg/html.svg";
+import { ReactComponent as cssIcon } from "../../../img/svg/css.svg";
+import { ReactComponent as jsIcon } from "../../../img/svg/js.svg";
+import { ReactComponent as tsIcon } from "../../../img/svg/ts.svg";
+import { ReactComponent as reactIcon } from "../../../img/svg/react.svg";
+import { ReactComponent as reduxIcon } from "../../../img/svg/redux.svg";
 import { fonts } from "../../../global/fonts";
 import { viewports } from "../../../global/viewports";
 
-const SKILLS = [
-  { title: "HTML", icon: icons.htmlIcon, iconWebp: icons.htmlIconWebp},
-  { title: "CSS", icon: icons.cssIcon, iconWebp: icons.cssIconWebp },
-  { title: "JavaScript", icon: icons.jsIcon, iconWebp: icons.jsIconWebp },
-  { title: "TypeScript", icon: icons.tsIcon, iconWebp: icons.tsIconWebp },
-  { title: "React", icon: icons.reactIcon, iconWebp: icons.reactIconWebp },
-  { title: "Redux", icon: icons.reduxIcon, iconWebp: icons.reduxIconWebp },
+const skills = [
+  { title: "HTML", icon: htmlIcon },
+  { title: "CSS", icon: cssIcon },
+  { title: "JavaScript", icon: jsIcon },
+  { title: "TypeScript", icon: tsIcon },
+  { title: "React", icon: reactIcon },
+  { title: "Redux", icon: reduxIcon },
 ];
 
 const StyledSkillsList = styled.ul`
@@ -41,7 +46,7 @@ const StyledSkillsList = styled.ul`
     font-weight: 400;
   }
 
-  img {
+  svg {
     width: 96px;
     height: 96px;
     margin-bottom: 0.6rem;
@@ -56,7 +61,7 @@ const StyledSkillsList = styled.ul`
       border-radius: 25px;
     }
 
-    img {
+    svg {
       width: 64px;
       height: 64px;
     }
@@ -66,13 +71,9 @@ const StyledSkillsList = styled.ul`
 const SkillsList = () => {
   return (
     <StyledSkillsList>
-      {SKILLS.map((skill) => (
+      {skills.map((skill) => (
         <li key={skill.title}>
-          <picture>
-            <source type="image/webp" srcSet={skill.iconWebp} width="96" height="96"/>
-            <source type="image/webp" media={viewports.mobile} srcSet={skill.iconWebp} width="64" height="64"/>
-            <img src={skill.icon} width="96" height="96" alt=""/>
-          </picture>
+          <skill.icon/>
           {skill.title}
         </li>
       ))}

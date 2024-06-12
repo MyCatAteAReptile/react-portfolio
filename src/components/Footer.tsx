@@ -16,6 +16,7 @@ const StyledFooter = styled.footer`
     font-style: italic;
     font-size: 1rem;
     margin: 0;
+    margin-bottom: 0.2rem;
     color: ${colors.mainFont};
   }
 
@@ -37,6 +38,7 @@ const Footer = () => {
     <StyledFooter>
       <Container>
         <div>
+          <address>Telegram: <a href="https://t.me/SergeyMelkozerov">@SergeyMelkozerov</a></address>
           <address>Email: <a href="mailto:lkn1st@gmail.com">lkn1st@gmail.com</a></address>
           <p>© Мелкозеров С.В.</p>
         </div>
