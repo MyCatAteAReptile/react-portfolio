@@ -10,9 +10,18 @@ import { IImageSet } from "../../../types/image";
 const slidesImages: IImageSet = certImagesSet;
 
 const slides: ISlide[] = [
-  {title: "Сертификат HTML Academy о прохождении курса по верстке.", image: slidesImages.certLayout},
-  {title: "Сертификат HTML Academy о прохождении курса по адаптивной верстке и автоматизации.", image: slidesImages.certAdaptLayout},
-  {title: "Сертификат HTML Academy о прохождении курса по JavaScript.", image: slidesImages.certJS},
+  {
+    title: "Сертификат HTML Academy о прохождении курса по верстке.", 
+    image: slidesImages.certLayout
+  },
+  {
+    title: "Сертификат HTML Academy о прохождении курса по адаптивной верстке и автоматизации.", 
+    image: slidesImages.certAdaptLayout
+  },
+  {
+    title: "Сертификат HTML Academy о прохождении курса по JavaScript.", 
+    image: slidesImages.certJS
+  },
 ];
 
 const StyledCertificates = styled.div`
