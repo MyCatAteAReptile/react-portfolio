@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import styled from 'styled-components'
-import { colors } from '../../../global/colors'
-import { fonts } from '../../../global/fonts'
+import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
+import { colors } from '../../../global/colors';
+import { fonts } from '../../../global/fonts';
 import { ReactComponent as XIcon } from '../../../img/svg/x-mark.svg';
 import { ReactComponent as BarsIcon } from '../../../img/svg/bars.svg';
 import { viewports } from '../../../global/viewports';
@@ -21,6 +21,7 @@ const NavButton = styled.button`
   border-radius: 10px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
   transition: all 0.2 ease-out;
+  cursor: pointer;
   
   svg {
     width: 32px;
@@ -28,9 +29,15 @@ const NavButton = styled.button`
     stroke: ${colors.mainFont};
   }
 
-  &:focus-visible, &:active {
+  &:focus {
+    outline-offset: 2px;
+    outline: 2px solid ${colors.mainFont};
+  }
+
+  &:active {
     transform: translateY(2px);
     box-shadow: none;
+    outline: none;
   }
 
   @media ${viewports.mobile} {
@@ -57,13 +64,20 @@ const NavLinks = styled.ul<{ $isMenuOpen?: boolean }>`
     outline: none;
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 
-    &:hover, &:focus-visible {
+    &:hover {
       color: ${colors.UIBackground};
+    }
+
+    &:focus {
+      border-radius: 5px;
+      outline-offset: 2px;
+      outline: 2px solid ${colors.mainFont};
     }
 
     &:active {
       transform: translateY(4px);
       text-shadow: none;
+      outline: none;
     }
   }
 

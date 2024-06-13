@@ -6,7 +6,7 @@ import ProjectCard from "./ProjectCard";
 import { IProject } from "../../../types/project";
 import { projectsImagesSet } from "../../../img/projects/projects";
 import { fonts } from "../../../global/fonts";
-import { ReactComponent as GithubIcon } from "../../../img/svg/github-icon.svg";
+import { ReactComponent as GithubIcon } from "../../../img/svg/github.svg";
 import { viewports } from "../../../global/viewports";
 import CustomLink from "../../UI/link/CustomLink";
 
@@ -129,13 +129,19 @@ const Button = styled.button<{ $isSelected?: boolean; }>`
     font-weight: 700;
     font-size: 1.1rem;
 
-    &:hover, &:focus-visible {
+    &:hover {
       background-color: ${colors.mainFont};
+    }
+
+    &:focus {
+      outline-offset: 2px;
+      outline: 2px solid ${colors.mainFont};
     }
 
     &:active {
       transform: translateY(4px);
       box-shadow: none;
+      outline: none;
     }
 `;
 

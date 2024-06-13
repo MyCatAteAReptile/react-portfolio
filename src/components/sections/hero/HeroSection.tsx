@@ -15,7 +15,7 @@ const StyledCustomLink = styled(CustomLink)`
         fill: ${colors.UIBackground};
     }
 
-    &:hover svg, &:focus-visible svg {
+    &:hover svg {
         fill: ${colors.mainFont};
     }
 
@@ -126,7 +126,7 @@ const HeroSection = () => {
                     <div>
                         <p className="greetings"><span>Привет!</span><br />Меня зовут Сергей и&nbsp;я&nbsp;Фронтенд-разработчик.</p>
                         <p>Рад вас видеть на странице моего портфолио!</p>
-                        <StyledCustomLink href="https://t.me/SergeyMelkozerov" target="_blank"><TelegramIcon />Напишите мне</StyledCustomLink>
+                        <StyledCustomLink href="https://t.me/SergeyMelkozerov" target="_blank" rel="noopener noreferrer"><TelegramIcon />Напишите мне</StyledCustomLink>
                     </div>
                     <CustomPicture image={heroImagesSet.cat} />
                 </div>

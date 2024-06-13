@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import { colors } from "../../../global/colors";
-import { IProject } from "../../../types/project";
-import { ReactComponent as GithubIcon }  from "../../../img/svg/github-icon.svg";
-import { ReactComponent as LinkIcon }  from "../../../img/svg/link-icon.svg";
+import { ReactComponent as EyeIcon }  from "../../../img/svg/eye.svg";
+import { ReactComponent as CodeBracketIcon }  from "../../../img/svg/code-bracket.svg";
 import { viewports } from '../../../global/viewports';
 import { IImage } from '../../../types/image';
 import CustomPicture from '../../UI/picture/CustomPicture';
@@ -17,35 +16,63 @@ const StyledProjectCard = styled.div`
     width: 400px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
-    &:hover img {
-      filter: grayscale(60%);
+    &:hover, &:focus-within {
+      .wrapper::before {
+        display: block;
+      }
+
+      .buttons {
+        z-index: 1;
+      }
     }
 
-    &:hover .buttons, &:focus-within .buttons {
-      z-index: 100;
+    .wrapper {
+      position: relative;
+    }
+
+    .wrapper::before {
+      content: "";
+      display: none;
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: calc(100% + 2px); //добавил несколько пикселей к размерам чтобы скрыть выступающие пиксели светлых изображений на скругленных краях сверху
+      height: calc(100% + 1px);
+      background-color: rgba(0, 0, 0, 0.9);
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
     }
 
     .buttons {
       display: flex;
-      position: absolute;
       z-index: -1;
-      top: 20px;
-      left: 5%;
-      width: 90%;
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 80%;
+      transform: translateY(-50%);
       justify-content: space-between;
 
       a {
         display: flex;
         padding: 7px;
-        background-color: ${colors.UIBackground};
+        background-color: transparent;
         border-radius: 50%;
         outline: none;
+        width: 35%;
+        color: ${colors.mainFont};
 
-        &:hover {
-          opacity: 0.7;
+        &:hover svg {
+          stroke: ${colors.UIBackground};
         }
 
-        &:active, &:focus-visible {
+        &:focus {
+          outline-offset: 2px;
+          outline: 2px solid ${colors.mainFont};
+        }
+
+        &:active {
+          outline: none;
           opacity: 0.5;
         }
       }
@@ -53,9 +80,6 @@ const StyledProjectCard = styled.div`
       svg {
         display: block;
         margin: 0 auto;
-        width: 38px;
-        height: 38px;
-        fill: ${colors.mainFont};
         stroke: ${colors.mainFont};
       }
     }
@@ -65,7 +89,6 @@ const StyledProjectCard = styled.div`
       width: 100%;
       height: 300px;
       object-fit: cover;
-      object-position: 50% 0%;
       border-top-left-radius: 30px;
       border-top-right-radius: 30px;
     }
@@ -80,10 +103,6 @@ const StyledProjectCard = styled.div`
 
     @media ${viewports.tablet} {
       width: 688px;
-
-      .buttons {
-        z-index: 100;
-      }
     }
 
     @media ${viewports.mobile} {
@@ -92,13 +111,6 @@ const StyledProjectCard = styled.div`
       img {
         width: 300px;
         height: 225px;
-      }
-
-      .buttons {
-        svg {
-          width: 24px;
-          height: 24px;
-        }
       }
     }
 `;
@@ -113,11 +125,13 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, image, link, githubLink }: ProjectCardProps) => {
   return (
     <StyledProjectCard>
-      <div className='buttons'>
-        <a href={githubLink} aria-label="Ссылка на репозиторий проекта."><GithubIcon /></a>
-        <a href={link} aria-label="Ссылка на проект."><LinkIcon /></a>
+      <div className="wrapper">
+        <div className="buttons">
+          <a href={githubLink} aria-label={`Ссылка на репозиторий проекта ${title}.`} target="_self"><CodeBracketIcon /></a>
+          <a href={link} aria-label={`Ссылка на проект ${title}.`} target="_self"><EyeIcon /></a>
+        </div>
+        <CustomPicture image={image}/>        
       </div>
-      <CustomPicture image={image}/>
       <p>{title}</p>
     </StyledProjectCard>
   )

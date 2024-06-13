@@ -27,9 +27,15 @@ const StyledArrows = styled.div`
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     transform: translateY(-50%);
     opacity: 1;
+    cursor: pointer;
 
-    &:hover, &:focus-visible {
+    &:hover {
       background-color: ${colors.mainFont};
+    }
+
+    &:focus {
+      outline-offset: 2px;
+      outline: 2px solid ${colors.mainFont};
     }
 
     &:active {
@@ -55,4 +61,4 @@ const Arrows = () => {
   )
 }
 
-export default Arrows
+export default Arrows;

@@ -1,7 +1,7 @@
-import React from 'react'
-import Navbar from './UI/navbar/Navbar'
-import styled from 'styled-components'
-import { colors } from '../global/colors'
+import React from 'react';
+import Navbar from './UI/navbar/Navbar';
+import styled from 'styled-components';
+import { colors } from '../global/colors';
 import Container from './Container';
 import Logo from './Logo';
 import { viewports } from '../global/viewports';
@@ -35,4 +35,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

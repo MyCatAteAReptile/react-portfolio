@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { ReactComponent as LogoIcon } from '../img/svg/logo.svg'
-import { colors } from "../global/colors";
+import React from 'react';
+import styled from 'styled-components';
+import { ReactComponent as LogoIcon } from '../img/svg/logo.svg';
+import { colors } from '../global/colors';
 
 const StyledLogo = styled.a`
   outline: none;
@@ -17,13 +17,20 @@ const StyledLogoIcon = styled(LogoIcon)`
     outline: none;
     z-index: 3;
 
-    ${StyledLogo}:hover &, ${StyledLogo}:focus-visible & {
+    ${StyledLogo}:hover & {
       fill: ${colors.mainFont};
+    }
+
+    ${StyledLogo}:focus & {
+      border-radius: 5px;
+      outline-offset: 2px;
+      outline: 2px solid ${colors.mainFont};      
     }
 
     ${StyledLogo}:active & {
       opacity: 0.7;
       transform: translateY(4px);
+      outline: none;
     }
 `;
 
@@ -37,8 +44,12 @@ const ShadowLogoIcon = styled(StyledLogoIcon)`
   z-index: 2;
   transform: translateY(0);
 
-  ${StyledLogo}:hover &, ${StyledLogo}:focus-visible & {
+  ${StyledLogo}:hover & {
     fill: rgba(0, 0, 0, 0.5);
+  }
+
+  ${StyledLogo}:focus & {
+    outline: none;
   }
 
   ${StyledLogo}:active & {
@@ -56,4 +67,4 @@ const Logo = () => {
   )
 }
 
-export default Logo
+export default Logo;

@@ -1,6 +1,6 @@
-import React from 'react'
-import { IImage } from '../../../types/image'
-import { viewports } from '../../../global/viewports'
+import React from 'react';
+import { IImage } from '../../../types/image';
+import { viewports } from '../../../global/viewports';
 
 interface CustomPictureProps {
     image: IImage
@@ -87,4 +87,4 @@ const CustomPicture = ({ image }: CustomPictureProps) => {
     )
 }
 
-export default CustomPicture
+export default CustomPicture;

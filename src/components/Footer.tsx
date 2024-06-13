@@ -20,8 +20,14 @@ const StyledFooter = styled.footer`
     color: ${colors.mainFont};
   }
 
-  a:hover, a:focus-visible {
+  a:hover {
     opacity: 0.7;
+  }
+
+  a:focus {
+    border-radius: 5px;
+    outline-offset: 2px;
+    outline: 2px solid ${colors.mainFont};
   }
 
   a:active {

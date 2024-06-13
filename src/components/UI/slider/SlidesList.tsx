@@ -17,7 +17,7 @@ const StyledSlidesList = styled.div`
     }
 `;
 
-const Slide = styled.div<{ $active?: boolean; }>`
+const Slide = styled.div`
     display: block;
     transition: transform 0.5s ease-in-out;
     padding: 0 80px;
@@ -94,4 +94,4 @@ const SlidesList = () => {
     )
 }
 
-export default SlidesList
+export default SlidesList;

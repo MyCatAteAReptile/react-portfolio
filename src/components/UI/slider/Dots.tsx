@@ -22,9 +22,15 @@ const Dot = styled.button<{ $active?: boolean }>`
   background-color: ${colors.UIBackground};
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   opacity: ${props => props.$active ? "0.7" : "1"};
+  cursor: pointer;
 
-  &:hover, &:focus-visible {
+  &:hover {
     background-color: ${colors.mainFont};
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 2px solid ${colors.mainFont};
   }
 
   &:active {
@@ -51,4 +57,4 @@ const Dots = () => {
   )
 }
 
-export default Dots
+export default Dots;

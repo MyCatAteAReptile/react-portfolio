@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../../global/colors";
-import { ReactComponent as ArrowLeftIcon } from '../../../img/svg/arrow-left.svg'
+import { ReactComponent as ArrowLeftIcon } from '../../../img/svg/arrow-left.svg';
 import { viewports } from "../../../global/viewports";
 
 const StyledScrollButton = styled.button<{ $isVisible?: boolean }>`
@@ -19,8 +19,13 @@ const StyledScrollButton = styled.button<{ $isVisible?: boolean }>`
     background-color: ${colors.UIBackground};
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
-    &:hover, &:focus-visible {
+    &:hover {
         background-color: ${colors.mainFont};
+    }
+
+    &:focus {
+      outline-offset: 2px;
+      outline: 2px solid ${colors.mainFont};
     }
 
     &:active {

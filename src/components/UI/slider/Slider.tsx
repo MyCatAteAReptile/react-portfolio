@@ -52,4 +52,4 @@ const Slider = ({ slides }: SliderProps) => {
   )
 }
 
-export default Slider
+export default Slider;
