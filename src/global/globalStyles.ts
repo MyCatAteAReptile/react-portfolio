@@ -1,15 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
-import RobotoRegularWoff2 from "../fonts/roboto-v30-cyrillic_latin-regular.woff2";
-import RobotoItalicWoff2 from "../fonts/roboto-v30-cyrillic_latin-italic.woff2";
-import Roboto700Woff2 from "../fonts/roboto-v30-cyrillic_latin-700.woff2";
-import Roboto900Woff2 from "../fonts/roboto-v30-cyrillic_latin-900.woff2";
-import { fonts } from './fonts';
-import { colors } from './colors';
-import { viewports } from './viewports';
+import RobotoRegularWoff2 from '../fonts/roboto-v30-cyrillic_latin-regular.woff2';
+import RobotoItalicWoff2 from '../fonts/roboto-v30-cyrillic_latin-italic.woff2';
+import Roboto700Woff2 from '../fonts/roboto-v30-cyrillic_latin-700.woff2';
+import Roboto900Woff2 from '../fonts/roboto-v30-cyrillic_latin-900.woff2';
+import fonts from './fonts';
+import colors from './colors';
+import viewports from './viewports';
 
-
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
     ${normalize}
 
     html {
@@ -97,3 +96,5 @@ export const GlobalStyle = createGlobalStyle`
         url(${Roboto900Woff2}) format("woff2"),
     }
 `;
+
+export default GlobalStyle;

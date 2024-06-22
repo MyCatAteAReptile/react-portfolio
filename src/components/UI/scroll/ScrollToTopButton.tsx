@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { colors } from "../../../global/colors";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import colors from '../../../global/colors';
 import { ReactComponent as ArrowLeftIcon } from '../../../img/svg/arrow-left.svg';
-import { viewports } from "../../../global/viewports";
+import viewports from '../../../global/viewports';
 
 const StyledScrollButton = styled.button<{ $isVisible?: boolean }>`
     position: fixed;
-    display: ${props => (props.$isVisible ? "flex" : "none")};
+    display: ${(props) => (props.$isVisible ? 'flex' : 'none')};
     justify-content: center;
     align-items: center;
     bottom: 100px;
@@ -17,15 +17,15 @@ const StyledScrollButton = styled.button<{ $isVisible?: boolean }>`
     border: none;
     outline: none;
     background-color: ${colors.UIBackground};
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
 
     &:hover {
         background-color: ${colors.mainFont};
     }
 
     &:focus {
-      outline-offset: 2px;
-      outline: 2px solid ${colors.mainFont};
+        outline-offset: 2px;
+        outline: 2px solid ${colors.mainFont};
     }
 
     &:active {
@@ -59,29 +59,37 @@ const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const handleScroll = () => {
-        if (window.scrollY >= (document.documentElement.clientHeight / 2)) {
+        if (window.scrollY >= document.documentElement.clientHeight / 2) {
             setIsVisible(true);
         } else {
             setIsVisible(false);
         }
-    }
+    };
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll);
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-        }
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            behavior: "smooth",
+            behavior: 'smooth',
         });
     };
 
-    return <StyledScrollButton $isVisible={isVisible} onClick={scrollToTop} aria-label="В начало."><ArrowUpIcon /></StyledScrollButton>;
+    return (
+        <StyledScrollButton
+            $isVisible={isVisible}
+            onClick={scrollToTop}
+            aria-label="В начало."
+        >
+            <ArrowUpIcon />
+        </StyledScrollButton>
+    );
 };
 
 export default ScrollToTopButton;

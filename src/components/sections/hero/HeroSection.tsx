@@ -1,14 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { colors } from "../../../global/colors";
-import { fonts } from "../../../global/fonts";
-import Container from "../../Container";
-import { heroImagesSet } from "../../../img/hero/hero";
-import { visuallyHidden } from "../../../global/visuallyHidden";
-import { viewports } from "../../../global/viewports";
-import { ReactComponent as TelegramIcon } from "../../../img/svg/telegram-logo.svg"
-import CustomLink from "../../UI/link/CustomLink";
-import CustomPicture from "../../UI/picture/CustomPicture";
+import styled from 'styled-components';
+import colors from '../../../global/colors';
+import fonts from '../../../global/fonts';
+import Container from '../../Container';
+import heroImagesSet from '../../../img/hero/hero';
+import visuallyHidden from '../../../global/visuallyHidden';
+import viewports from '../../../global/viewports';
+import { ReactComponent as TelegramIcon } from '../../../img/svg/telegram-logo.svg';
+import CustomLink from '../../UI/link/CustomLink';
+import CustomPicture from '../../UI/picture/CustomPicture';
 
 const StyledCustomLink = styled(CustomLink)`
     svg {
@@ -22,11 +21,11 @@ const StyledCustomLink = styled(CustomLink)`
     @media ${viewports.mobile} {
         position: relative;
         z-index: 2;
-     }
+    }
 `;
 
 const StyledHeroSection = styled.section`
-    padding: 0 0 40px 0;
+    padding: 0 0 40px;
     background-color: ${colors.mainBackground};
 
     h2 {
@@ -36,8 +35,7 @@ const StyledHeroSection = styled.section`
     .wrapper {
         display: grid;
         grid-template-columns: 500px min-content;
-        justify-items: center;
-        align-items: center;
+        place-items: center;
         justify-content: center;
     }
 
@@ -46,7 +44,7 @@ const StyledHeroSection = styled.section`
         height: 250px;
         object-fit: cover;
         border-radius: 50%;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
     }
 
     .greetings {
@@ -65,7 +63,7 @@ const StyledHeroSection = styled.section`
         margin: 0;
         color: ${colors.mainFont};
         margin-bottom: 2rem;
-        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 5px 5px rgba(0 0 0 / 50%);
     }
 
     @media ${viewports.tablet} {
@@ -83,7 +81,8 @@ const StyledHeroSection = styled.section`
             min-height: 320px;
         }
 
-        p, .greetings {
+        p,
+        .greetings {
             position: relative;
             z-index: 2;
             text-align: center;
@@ -117,22 +116,31 @@ const StyledHeroSection = styled.section`
     }
 `;
 
-const HeroSection = () => {
-    return (
-        <StyledHeroSection id="hero">
-            <h2>Приветствие</h2>
-            <Container>
-                <div className="wrapper">
-                    <div>
-                        <p className="greetings"><span>Привет!</span><br />Меня зовут Сергей и&nbsp;я&nbsp;Фронтенд-разработчик.</p>
-                        <p>Рад вас видеть на странице моего портфолио!</p>
-                        <StyledCustomLink href="https://t.me/SergeyMelkozerov" target="_blank" rel="noopener noreferrer"><TelegramIcon />Напишите мне</StyledCustomLink>
-                    </div>
-                    <CustomPicture image={heroImagesSet.cat} />
+const HeroSection = () => (
+    <StyledHeroSection id="hero">
+        <h2>Приветствие</h2>
+        <Container>
+            <div className="wrapper">
+                <div>
+                    <p className="greetings">
+                        <span>Привет!</span>
+                        <br />
+                        Меня зовут Сергей и&nbsp;я&nbsp;Фронтенд-разработчик.
+                    </p>
+                    <p>Рад вас видеть на странице моего портфолио!</p>
+                    <StyledCustomLink
+                        href="https://t.me/SergeyMelkozerov"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <TelegramIcon />
+                        Напишите мне
+                    </StyledCustomLink>
                 </div>
-            </Container>
-        </StyledHeroSection>
-    );
-};
+                <CustomPicture image={heroImagesSet.cat} />
+            </div>
+        </Container>
+    </StyledHeroSection>
+);
 
 export default HeroSection;

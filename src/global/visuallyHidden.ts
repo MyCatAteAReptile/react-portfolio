@@ -1,4 +1,4 @@
-export const visuallyHidden = `
+const visuallyHidden = `
 position: absolute;
 width: 1px;
 height: 1px;
@@ -8,3 +8,5 @@ border: 0;
 clip: rect(0 0 0 0);
 overflow: hidden;
 `;
+
+export default visuallyHidden;

@@ -1,3 +1,5 @@
-export const appRouts = {
-    Main: '/'
-}
+const appRouts = {
+    Main: '/',
+};
+
+export default appRouts;

@@ -1,4 +1,4 @@
-export const colors = {
+const colors = {
     mainBackground: '#2c2c2c',
     lightBackground: '#363636',
     mainFont: '#e4e4e4',
@@ -6,5 +6,7 @@ export const colors = {
     UIBackground: '#e29a05',
     scrollbarTrack: '#212121',
     scrollbarThumb: '#424242',
-    scrollbarThumbHover: '#555555'
+    scrollbarThumbHover: '#555555',
 };
+
+export default colors;

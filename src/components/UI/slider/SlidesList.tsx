@@ -1,7 +1,6 @@
-import React from 'react';
-import { SliderContext } from '../../../context/SliderContext';
 import styled from 'styled-components';
-import { viewports } from '../../../global/viewports';
+import SliderContext from '../../../context/SliderContext';
+import viewports from '../../../global/viewports';
 import useSafeContext from '../../../hooks/useCustomContext';
 import { ISliderContext } from '../../../types/slider';
 import CustomPicture from '../picture/CustomPicture';
@@ -22,19 +21,7 @@ const Slide = styled.div`
     transition: transform 0.5s ease-in-out;
     padding: 0 80px;
 
-    div {
-        position: relative;
-        border: solid 1px black;
-        margin-bottom: 10px;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-
-        &:hover p {
-            display: block;
-        }
-    }
-
     p {
-        display: none;
         margin: 0;
         padding: 50px 25px;
         position: absolute;
@@ -42,22 +29,24 @@ const Slide = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        animation-duration: 1s;
-        animation-name: slidein;
-        color: #E29A05;
+        background-color: rgba(0 0 0 / 90%);
+        color: #e29a05;
+        transition: 1s;
+        transform: translateY(100%);
+    }
 
-        @keyframes slidein {
-            from {
-                margin-top: 100%;
-            }
+    div {
+        position: relative;
+        border: solid 1px black;
+        margin-bottom: 10px;
+        box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
+        overflow: hidden;
 
-            to {
-                margin-top: 0%;
-            }
+        &:hover p {
+            transform: translateY(0);
         }
     }
-    
+
     img {
         display: block;
         width: 500px;
@@ -76,22 +65,25 @@ const Slide = styled.div`
 `;
 
 const SlidesList = () => {
-    const { slides, currentSlide } = useSafeContext<ISliderContext | null>(SliderContext);
+    const { slides, currentSlide } = useSafeContext<ISliderContext | null>(
+        SliderContext,
+    );
 
     return (
         <StyledSlidesList>
-            {
-                slides.map((slide, index) => (
-                    <Slide key={index} style={{ transform: `translateX(-${currentSlide * 100}%)` }} >
-                        <div>
-                            <CustomPicture image={slide.image}/>
-                            <p>{slide.title}</p>
-                        </div>
-                    </Slide>
-                ))
-            }
+            {slides.map((slide) => (
+                <Slide
+                    key={slide.id}
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                    <div>
+                        <CustomPicture image={slide.image} />
+                        <p>{slide.title}</p>
+                    </div>
+                </Slide>
+            ))}
         </StyledSlidesList>
-    )
-}
+    );
+};
 
 export default SlidesList;

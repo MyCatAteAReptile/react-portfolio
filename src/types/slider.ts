@@ -1,13 +1,14 @@
-import { IImage } from "./image"
+import { IImage } from './image';
 
 export interface ISlide {
-    title: string,
-    image: IImage
+    id: number;
+    title: string;
+    image: IImage;
 }
 
 export interface ISliderContext {
-    slides: ISlide[],
-    currentSlide: number,
-    changeSlide: Function,
-    setCurrentSlide: Function
+    slides: ISlide[];
+    currentSlide: number;
+    changeSlide: Function;
+    setCurrentSlide: Function;
 }
