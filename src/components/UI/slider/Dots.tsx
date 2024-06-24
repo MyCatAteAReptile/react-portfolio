@@ -22,6 +22,7 @@ const Dot = styled.button<{ $active?: boolean }>`
     box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
     opacity: ${(props) => (props.$active ? '0.7' : '1')};
     cursor: pointer;
+    appearance: none;
 
     &:hover {
         background-color: ${colors.mainFont};
@@ -44,12 +45,12 @@ const Dots = () => {
 
     return (
         <StyledDots>
-            {slides.map((slide) => (
+            {slides.map((slide, index) => (
                 <Dot
                     key={slide.id}
-                    $active={currentSlide === slide.id}
+                    $active={currentSlide === index}
                     onClick={() => {
-                        setCurrentSlide(slide.id);
+                        setCurrentSlide(index);
                     }}
                     aria-label={`Перейти к слайду номер ${slide.id}`}
                 />

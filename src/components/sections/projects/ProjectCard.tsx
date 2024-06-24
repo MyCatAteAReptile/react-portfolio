@@ -15,14 +15,17 @@ const StyledProjectCard = styled.div`
     width: 400px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
-    &:hover,
-    &:focus-within {
+    &:hover {
         .wrapper::before {
-            display: block;
+            opacity: 1;
         }
 
         .buttons {
-            z-index: 1;
+            transform: translateY(-50%) scale(100%);
+
+            a {
+                transform: scale(100%);
+            }
         }
     }
 
@@ -32,7 +35,7 @@ const StyledProjectCard = styled.div`
 
     .wrapper::before {
         content: '';
-        display: none;
+        display: block;
         position: absolute;
         top: -1px;
         left: -1px;
@@ -42,16 +45,17 @@ const StyledProjectCard = styled.div`
         background-color: rgba(0, 0, 0, 0.9);
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
+        opacity: 0;
+        transition: 1s;
     }
 
     .buttons {
         display: flex;
-        z-index: -1;
         position: absolute;
         top: 50%;
         left: 10%;
         width: 80%;
-        transform: translateY(-50%);
+        transform: scale(0);
         justify-content: space-between;
 
         a {
@@ -60,8 +64,11 @@ const StyledProjectCard = styled.div`
             background-color: transparent;
             border-radius: 50%;
             outline: none;
-            width: 35%;
+            width: 112px;
+            height: 112px;
             color: ${colors.mainFont};
+            transform: scale(0);
+            transition: 1s;
 
             &:hover svg {
                 stroke: ${colors.UIBackground};
@@ -82,6 +89,8 @@ const StyledProjectCard = styled.div`
             display: block;
             margin: 0 auto;
             stroke: ${colors.mainFont};
+            width: 98px;
+            height: 98px;
         }
     }
 
@@ -104,6 +113,18 @@ const StyledProjectCard = styled.div`
 
     @media ${viewports.tablet} {
         width: 688px;
+
+        .buttons {
+            a {
+                width: 192px;
+                height: 192px;
+            }
+
+            svg {
+                width: 178px;
+                height: 178px;
+            }
+        }
     }
 
     @media ${viewports.mobile} {
@@ -112,6 +133,18 @@ const StyledProjectCard = styled.div`
         img {
             width: 300px;
             height: 225px;
+        }
+
+        .buttons {
+            a {
+                width: 84px;
+                height: 84px;
+            }
+
+            svg {
+                width: 70px;
+                height: 70px;
+            }
         }
     }
 `;
@@ -130,14 +163,16 @@ const ProjectCard = ({ title, image, link, githubLink }: ProjectCardProps) => (
                 <a
                     href={githubLink}
                     aria-label={`Ссылка на репозиторий проекта ${title}.`}
-                    target="_self"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <CodeBracketIcon />
                 </a>
                 <a
                     href={link}
                     aria-label={`Ссылка на проект ${title}.`}
-                    target="_self"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <EyeIcon />
                 </a>

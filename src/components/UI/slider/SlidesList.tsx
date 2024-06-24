@@ -4,6 +4,7 @@ import viewports from '../../../global/viewports';
 import useSafeContext from '../../../hooks/useCustomContext';
 import { ISliderContext } from '../../../types/slider';
 import CustomPicture from '../picture/CustomPicture';
+import colors from '../../../global/colors';
 
 const StyledSlidesList = styled.div`
     overflow: hidden;
@@ -30,7 +31,8 @@ const Slide = styled.div`
         width: 100%;
         height: 100%;
         background-color: rgba(0 0 0 / 90%);
-        color: #e29a05;
+        color: ${colors.mainFont};
+        line-height: 1.4;
         transition: 1s;
         transform: translateY(100%);
     }

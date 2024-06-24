@@ -26,6 +26,7 @@ const StyledArrows = styled.div`
         transform: translateY(-50%);
         opacity: 1;
         cursor: pointer;
+        color: ${colors.black};
 
         &:hover {
             background-color: ${colors.mainFont};

@@ -40,6 +40,7 @@ const Slider = ({ slides }: SliderProps) => {
         onSwipedLeft: handleSwipedLeft,
         onSwipedRight: handleSwipedRight,
         trackMouse: false,
+        touchEventOptions: { passive: true },
     });
 
     const contextMemoValues = useMemo(

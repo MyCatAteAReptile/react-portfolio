@@ -92,9 +92,10 @@ const NavLinks = styled.ul<{ $isMenuOpen?: boolean }>`
         box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
 
         a {
-            font-size: 1rem;
+            font-size: 1.5rem;
             font-weight: 400;
             text-shadow: none;
+            padding: 5px;
 
             &:active {
                 transform: translateY(0);

@@ -18,6 +18,7 @@ const StyledScrollButton = styled.button<{ $isVisible?: boolean }>`
     outline: none;
     background-color: ${colors.UIBackground};
     box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
+    color: ${colors.black};
 
     &:hover {
         background-color: ${colors.mainFont};

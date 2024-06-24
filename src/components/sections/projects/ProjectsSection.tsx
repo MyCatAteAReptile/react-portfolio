@@ -3,65 +3,12 @@ import styled from 'styled-components';
 import colors from '../../../global/colors';
 import Container from '../../Container';
 import ProjectCard from './ProjectCard';
-import { IProject } from '../../../types/project';
-import projectsImagesSet from '../../../img/projects/projects';
 import fonts from '../../../global/fonts';
 import { ReactComponent as GithubIcon } from '../../../img/svg/github.svg';
 import viewports from '../../../global/viewports';
 import CustomLink from '../../UI/link/CustomLink';
-
-const tags = {
-    all: 'all',
-    'html-css': 'html-css',
-    js: 'js',
-    react: 'react',
-};
-
-const projectsData: IProject[] = [
-    {
-        id: 1,
-        title: 'Портфолио',
-        tag: [tags.all, tags.react],
-        image: projectsImagesSet.portfolio,
-        link: 'https://melkozerov-sv.vercel.app',
-        githubLink:
-            'https://github.com/MyCatAteAReptile/react-portfolio/tree/master',
-    },
-    {
-        id: 2,
-        title: 'Карточки',
-        tag: [tags.all, tags.react],
-        image: projectsImagesSet.cards,
-        link: 'https://cards-pi-steel.vercel.app',
-        githubLink:
-            'https://github.com/MyCatAteAReptile/practice-react-cards/tree/master',
-    },
-    {
-        id: 3,
-        title: 'Калькулятор',
-        tag: [tags.all, tags.react],
-        image: projectsImagesSet.calculator,
-        link: 'https://practice-react-calculator.vercel.app',
-        githubLink:
-            'https://github.com/MyCatAteAReptile/practice-react-calculator/tree/master',
-    },
-    {
-        id: 4,
-        title: 'Фитнес',
-        tag: [tags.all, tags['html-css']],
-        image: projectsImagesSet.fitness,
-        link: 'https://fitness-2-0-v747.vercel.app',
-        githubLink: 'https://github.com/MyCatAteAReptile/fitness-2.0/tree/main',
-    },
-    {
-        id: 5,
-        title: 'Путешествия',
-        tag: [tags.all, tags['html-css']],
-        image: projectsImagesSet.travels,
-        link: 'https://travels-rho.vercel.app',
-        githubLink: 'https://github.com/MyCatAteAReptile/Travels/tree/main',
-    },
-];
+import tags from '../../../data/tags';
+import projects from '../../../data/projects';
 
 const StyledCustomLink = styled(CustomLink)`
     /* переменная для позиционирования CustomLink в StyledProjectSection */
@@ -155,7 +102,7 @@ const Button = styled.button<{ $isSelected?: boolean }>`
 const ProjectsSection = () => {
     const [tag, setTag] = useState(tags.all);
 
-    const filteredProjects = projectsData.filter((project) =>
+    const filteredProjects = projects.filter((project) =>
         project.tag.includes(tag),
     );
 
