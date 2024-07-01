@@ -152,6 +152,33 @@ const projectsImagesSet: IImageSet = {
         },
         alt: 'Скриншот проекта Карточки.',
     },
+    todo: {
+        desktop: {
+            original: projectsImages.todoDesktop,
+            originalHR: projectsImages.todoDesktopHR,
+            webp: projectsImages.todoDesktopWebp,
+            webpHR: projectsImages.todoDesktopWebpHR,
+            width: projectsImagesSize.desktop.width,
+            height: projectsImagesSize.desktop.height,
+        },
+        tablet: {
+            original: projectsImages.todoTablet,
+            originalHR: projectsImages.todoTabletHR,
+            webp: projectsImages.todoTabletWebp,
+            webpHR: projectsImages.todoTabletWebpHR,
+            width: projectsImagesSize.tablet.width,
+            height: projectsImagesSize.tablet.height,
+        },
+        mobile: {
+            original: projectsImages.todoMobile,
+            originalHR: projectsImages.todoMobileHR,
+            webp: projectsImages.todoMobileWebp,
+            webpHR: projectsImages.todoMobileWebpHR,
+            width: projectsImagesSize.mobile.width,
+            height: projectsImagesSize.mobile.height,
+        },
+        alt: 'Скриншот проекта To-do список.',
+    },
 };
 
 export default projectsImagesSet;

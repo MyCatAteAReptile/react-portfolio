@@ -32,6 +32,15 @@ const projects: IProject[] = [
     },
     {
         id: 4,
+        title: 'To-do список',
+        tag: [tags.all, tags.react],
+        image: projectsImagesSet.todo,
+        link: 'https://to-do-to-do-todos.vercel.app',
+        githubLink:
+            'https://github.com/MyCatAteAReptile/practice-react-form/tree/main',
+    },
+    {
+        id: 5,
         title: 'Фитнес',
         tag: [tags.all, tags['html-css']],
         image: projectsImagesSet.fitness,
@@ -39,7 +48,7 @@ const projects: IProject[] = [
         githubLink: 'https://github.com/MyCatAteAReptile/fitness-2.0/tree/main',
     },
     {
-        id: 5,
+        id: 6,
         title: 'Путешествия',
         tag: [tags.all, tags['html-css']],
         image: projectsImagesSet.travels,
