@@ -20,6 +20,7 @@ const StyledProjectSection = styled.section`
     font-family: ${fonts.mainFont};
 
     h2 {
+        font-size: 2rem;
         font-weight: 900;
         text-align: center;
         margin: 0;

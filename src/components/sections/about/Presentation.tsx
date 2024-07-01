@@ -19,10 +19,12 @@ const StyledPresentation = styled.div`
     box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
 
     h2 {
+        font-size: 2rem;
         font-weight: 900;
     }
 
     h3 {
+        font-size: 1.5rem;
         font-weight: 700;
     }
 

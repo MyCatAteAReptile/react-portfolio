@@ -10,6 +10,7 @@ const StyledCertificates = styled.div`
     font-family: ${fonts.mainFont};
 
     & h3 {
+        font-size: 1.5rem;
         font-weight: 900;
         text-align: center;
         margin: 0;
