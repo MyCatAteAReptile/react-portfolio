@@ -19,7 +19,7 @@ const StyledProjectSection = styled.section`
     background-color: ${colors.mainBackground};
     font-family: ${fonts.mainFont};
 
-    h1 {
+    h2 {
         font-weight: 900;
         text-align: center;
         margin: 0;
@@ -109,7 +109,7 @@ const ProjectsSection = () => {
     return (
         <StyledProjectSection id="projects">
             <Container>
-                <h1>Мои проекты</h1>
+                <h2>Мои проекты</h2>
                 <ProjectTags>
                     <Button
                         $isSelected={tag === tags.all}

@@ -18,11 +18,11 @@ const StyledPresentation = styled.div`
     border-radius: 30px;
     box-shadow: 0 5px 10px 0 rgba(0 0 0 / 50%);
 
-    h1 {
+    h2 {
         font-weight: 900;
     }
 
-    h2 {
+    h3 {
         font-weight: 700;
     }
 
@@ -64,8 +64,8 @@ const StyledPresentation = styled.div`
         grid-template-columns: 1fr;
         gap: 30px;
 
-        h1,
-        h2 {
+        h2,
+        h3 {
             text-align: center;
         }
 
@@ -87,13 +87,13 @@ const Presentation = () => (
     <StyledPresentation>
         <CustomPicture image={presentationImagesSet.pc} />
         <div>
-            <h1>Обо мне</h1>
+            <h2>Обо мне</h2>
             <p>
                 Я&nbsp;веб-разработчик и&nbsp;мне нравится создавать интересные
                 и&nbsp;удобные приложения. Я&nbsp;использую HTML, CSS,
                 JavaScript, TypeScript, React, Redux.
             </p>
-            <h2>Образование</h2>
+            <h3>Образование</h3>
             <ul>
                 <li>
                     <ListIcon />

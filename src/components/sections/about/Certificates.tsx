@@ -9,7 +9,7 @@ const StyledCertificates = styled.div`
     padding: 40px 0;
     font-family: ${fonts.mainFont};
 
-    & h2 {
+    & h3 {
         font-weight: 900;
         text-align: center;
         margin: 0;
@@ -23,7 +23,7 @@ const StyledCertificates = styled.div`
 
 const Certificates = () => (
     <StyledCertificates>
-        <h2>Мои сертификаты</h2>
+        <h3>Мои сертификаты</h3>
         <Slider slides={certificatesSlides} />
     </StyledCertificates>
 );
